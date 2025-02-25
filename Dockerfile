@@ -17,8 +17,11 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /var/www
 
 # نسخ ملفات المشروع إلى الصورة
-COPY . .
+# نسخ ملفات المشروع بما فيها .env.example
+COPY . /var/www
 
+# نسخ .env.example إلى .env
+RUN cp .env.example .env
 # تثبيت Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
