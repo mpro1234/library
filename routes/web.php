@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-$port = (int) env('PORT', 8000); // Laravel يستخدم دالة env()
+$port = (int) (3600); // Laravel يستخدم دالة env()
 
 Route::get('/', function () {
     return view('welcome');
