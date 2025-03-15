@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-$port = (int) (3600); // Laravel يستخدم دالة env()
+$port = (int) $this->input->getOption('port'); // تحويل PORT إلى integer
+$port = $port + 1000; // الآن العملية آمنة
 
 Route::get('/', function () {
     return view('welcome');
